@@ -1,6 +1,6 @@
 add_message_files(
         FILES
-        # <===== HERE =======
+        FloatWithHeader.msg
 )
 
 generate_messages(

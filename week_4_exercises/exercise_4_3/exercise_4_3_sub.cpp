@@ -2,6 +2,7 @@
 #include <iostream>
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
+//#include <week_4_exercises/FloatWithHeader.h>
 
 double cosine = 0;
 double sine = 0;
@@ -9,10 +10,12 @@ ros::Publisher sum_pub;
 
 void cosineCallback(std_msgs::Float64 cos_msg) {
   cosine = cos_msg.data;
+  std::cout << cos_msg.data << std::endl;
 }
 
 void sineCallback(std_msgs::Float64 sin_msg) {
   sine = sin_msg.data;
+  //std::cout << sin_msg.data << std::endl;
 }
 
 int main(int argc, char** argv) {
@@ -24,9 +27,9 @@ int main(int argc, char** argv) {
 
   sum_pub = nh.advertise<std_msgs::Float64>("output", 1);
 
-  ros::Subscriber custom_sub = nh.subscribe("cosine_sine", 1, customCallback);
+  //ros::Subscriber custom_sub = nh.subscribe("cosine_sine", 1, customCallback);
 
-  ros::spin();
+  //ros::spin();
   ros::Rate rate(20);
   while(ros::ok()) {
     std_msgs::Float64 pub_msg;

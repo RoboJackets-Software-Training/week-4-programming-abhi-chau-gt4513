@@ -17,8 +17,8 @@ of the correct type, but they do not need to depend on your entire codebase. We
 skipped that this week for simplicity.
 
 Now you need to create a .msg file in the msgs/msg directory. You can name your
-message anything you would like, you are restricted to the character `[a-zA-Z][a-zA-Z1-9_]*`
-i.e. alphanumeric characters and underscores.
+message anything you would like, you are restricted to the character [a-zA-Z][a-zA-Z1-9_]*
+i.e. alphanumeric and _.
 
 ## Adding Fields
 Now we need to add fields to our message. There a wide range of primitives, you

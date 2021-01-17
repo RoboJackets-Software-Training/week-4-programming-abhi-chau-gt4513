@@ -34,7 +34,8 @@ find_package(catkin REQUIRED
 
 ## To declare and build messages, services or actions from within this
 ## package, follow these steps:
-## * Let MSG_DEP_SET be the set of packages whose message types you use in
+## * Let 
+#_DEP_SET be the set of packages whose message types you use in
 ##   your messages/services/actions (e.g. std_msgs, actionlib_msgs, ...).
 ## * In the file package.xml:
 ##   * add a build_depend tag for "message_generation"
@@ -53,11 +54,10 @@ find_package(catkin REQUIRED
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files( DIRECTORY msgs/msg
+  FILES
+  FloatWithHeader.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -74,10 +74,11 @@ find_package(catkin REQUIRED
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs  # Or other packages containing msgs
+#  week_4_exercises
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -135,3 +136,4 @@ add_subdirectory(testing)
 add_subdirectory(exercise_4_1)
 add_subdirectory(exercise_4_2)
 add_subdirectory(exercise_4_3)
+add_subdirectory(project_4_4)
